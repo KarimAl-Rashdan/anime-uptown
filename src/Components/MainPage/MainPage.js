@@ -8,9 +8,8 @@ function MainPage() {
   useEffect(() => {
     // (async () => {
       // await fetchMainList()
-      fetchData("v4/anime")
+      fetchData("anime")
       .then(data => {
-        console.log(data["data"])
         const allTitles = data["data"].map(animeInfo => {
           let newTitle = {
             title: animeInfo.title,

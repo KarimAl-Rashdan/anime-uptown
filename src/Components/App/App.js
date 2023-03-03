@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="App">
       <Link to="/">logo</Link>
-      <div classname="navBarWrapper">
+      <div className="navBarWrapper">
         {navBar && <NavBar />}
         <button onClick={() => toggleNavBar()}>Nav</button>
       </div>

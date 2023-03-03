@@ -2,6 +2,7 @@
 import React from 'react';
 import './App.css';
 import MainPage from "../MainPage/MainPage"
+import NavBar from "../NavBar/NavBar"
 
 
 
@@ -9,8 +10,11 @@ import MainPage from "../MainPage/MainPage"
 function App() {
   return (
     <div className="App">
-      <h1>You're doing great</h1>
-      <MainPage />
+      <NavBar />
+      <main className="mainPageContainer">
+        <header>You're doing great</header>
+        <MainPage />
+      </main>
     </div>
   );
 }

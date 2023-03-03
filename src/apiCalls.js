@@ -1,7 +1,18 @@
-function fetchData(id) {
-  fetch(`https://api.jikan.moe/v4/anime/${id}`)
+// function fetchData(id) {
+//   return fetch(`https://api.jikan.moe/v4/anime/${id}`)
+//   .then(response => {
+//     if(response.ok) {
+//       return response.json()
+//     } else {
+//       throw new Error(`An error occured: Status ${response.status}`)
+//     }
+//   })
+// }
+
+function fetchMainList() {
+  return fetch("https://api.jikan.moe/v4/anime")
   .then(response => {
-    if(response.ok) {
+    if(response.ok){
       return response.json()
     } else {
       throw new Error(`An error occured: Status ${response.status}`)
@@ -9,4 +20,4 @@ function fetchData(id) {
   })
 }
 
-export default fetchData;
+export default fetchMainList;

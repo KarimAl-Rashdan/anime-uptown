@@ -1,0 +1,15 @@
+.animeContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  
+}
+.animeCard {
+  width:75%;
+  margin: 5px;
+  border: 2px solid black;
+}
+.animeCard:hover {
+  box-shadow: 5px 5px purple;
+  outline-style: solid black;
+  outline-width: 10%;
+}

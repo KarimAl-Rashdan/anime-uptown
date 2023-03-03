@@ -35,6 +35,7 @@ function App() {
           exact path="/recommendations"
           render ={() => 
             <main className="questionPageContainer">
+              {setNavBar(false)}
               <Questions />
             </main>
           }

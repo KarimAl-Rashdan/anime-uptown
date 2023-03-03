@@ -29,16 +29,18 @@ function MainPage() {
   return (
     <main className="mainpage">
       <h2>hey</h2>
+      <section className="animeContainer">
     {animeTitles.sort((a,b) => b.rating - a.rating)
     .map(featuredAnime => {
       return(
-      <div className="animeContainer" key={featuredAnime.key}>
+      <div className="animeCard" key={featuredAnime.key}>
         <img src={featuredAnime.image} alt={featuredAnime.title}></img>
         <p>{featuredAnime.title}</p>
         <p>{featuredAnime.rating} Rating</p>
       </div>
       )
     })}
+    </section>
     
     </main>
   )

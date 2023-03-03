@@ -4,6 +4,7 @@ import { Route, Switch, Link } from "react-router-dom";
 import './App.css';
 import MainPage from "../MainPage/MainPage"
 import NavBar from "../NavBar/NavBar"
+import Questions from "../Questions/Questions"
 
 
 
@@ -34,7 +35,7 @@ function App() {
           exact path="/recommendations"
           render ={() => 
             <main className="questionPageContainer">
-              <h1>question route is working</h1>
+              <Questions />
             </main>
           }
         />

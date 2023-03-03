@@ -26,7 +26,11 @@ function Questions() {
     <section className="questionWrapper">
       <h1>What are you in the mood for? </h1>
       <div className="genreOptions">
-        buttons
+        {genres.map(genre => {
+          return (
+            <button>{genre.name}</button>
+          )
+        })}
       </div>
     </section>
   )

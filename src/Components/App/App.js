@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import React, {useState} from 'react';
-import { Route } from "react-router-dom";
+import { Route, Switch, Link } from "react-router-dom";
 import './App.css';
 import MainPage from "../MainPage/MainPage"
 import NavBar from "../NavBar/NavBar"
@@ -15,15 +15,31 @@ function App() {
   }
   return (
     <div className="App">
+      <Link to="/">logo</Link>
       <div classname="navBarWrapper">
         {navBar && <NavBar />}
         <button onClick={() => toggleNavBar()}>Nav</button>
       </div>
-      {/* <NavBar /> */}
-      <main className="mainPageContainer">
-        <header>You're doing great</header>
-        <MainPage />
-      </main>
+      <Switch>
+        <Route
+          exact path="/"
+          render={() => 
+            <main className="mainPageContainer">
+              <header>You're doing great</header>
+              <MainPage />
+            </main>
+          }
+        />
+        <Route 
+          exact path="/recommendations"
+          render ={() => 
+            <main className="questionPageContainer">
+              <h1>question route is working</h1>
+            </main>
+          }
+        />
+       
+      </Switch>
     </div>
   );
 }

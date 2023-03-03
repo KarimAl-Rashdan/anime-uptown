@@ -15,8 +15,10 @@ function App() {
   }
   return (
     <div className="App">
-      {navBar && <NavBar />}
-      <button onClick={() => toggleNavBar()}>Nav</button>
+      <div classname="navBarWrapper">
+        {navBar && <NavBar />}
+        <button onClick={() => toggleNavBar()}>Nav</button>
+      </div>
       {/* <NavBar /> */}
       <main className="mainPageContainer">
         <header>You're doing great</header>

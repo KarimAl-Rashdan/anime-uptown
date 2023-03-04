@@ -1,6 +1,7 @@
 import "../Questions/Questions.css"
 import React, { useState, useEffect } from "react"
 import fetchData from "../../apiCalls"
+import { Link } from "react-router-dom"
 
 function Questions() {
   const [genres, setGenres] = useState([])
@@ -28,7 +29,7 @@ function Questions() {
       <div className="genreOptions">
         {genres.map(genre => {
           return (
-            <button>{genre.name}</button>
+            <button><Link to={"/:id"}>{genre.name}</Link></button>
           )
         })}
       </div>

@@ -32,7 +32,7 @@ function App() {
           }
         />
         <Route 
-          exact path="/recommendations"
+          exact path="/question"
           render ={() => 
             <main className="questionPageContainer">
               {setNavBar(false)}
@@ -40,6 +40,14 @@ function App() {
             </main>
           }
         />
+        <Route
+          exact path="/:id"
+          render = {({match}) => 
+            <main className="recommendationPageContainer">
+              {setNavBar(false)}
+              <Recommendation />
+            </main>
+        }
        
       </Switch>
     </div>

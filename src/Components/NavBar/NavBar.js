@@ -8,7 +8,7 @@ function NavBar() {
     <ul>
       <li><Link to={`/myanimelist`}>MyAnimeList</Link></li>
       <li><Link to={`/favorites`}>Favorites</Link></li>
-      <li><Link to={`/recommendations`}>Want a recommendation?</Link></li>
+      <li><Link to={`/question`}>Want a recommendation?</Link></li>
     </ul>
   </div>
  )

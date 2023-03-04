@@ -33,7 +33,7 @@ function MainPage() {
     {animeTitles.sort((a,b) => b.rating - a.rating)
     .map(featuredAnime => {
       return(
-      <div className="allCards">
+      <div className="allCards" key={featuredAnime.key}>
         <AnimeCard image={featuredAnime.image} title={featuredAnime.title} rating={featuredAnime.rating} key={featuredAnime.key} />
         
       </div>

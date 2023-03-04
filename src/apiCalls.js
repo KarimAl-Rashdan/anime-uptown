@@ -10,6 +10,7 @@
 // }
 // https://api.jikan.moe/v4/anime?rating=%22r17%22&genre=%221%22
 function fetchData(path) {
+  console.log("path", path)
   return fetch(`https://api.jikan.moe/v4/${path}`)
   .then(response => {
     if(response.ok){

@@ -17,9 +17,9 @@ function App() {
     setNavBar(!navBar)
   }
 
-  const addToList = (id) => {
+  const addToList = (title) => {
     // event.preventDefault()
-    setSaveTitles([...savedTitles, id])
+    setSaveTitles([...savedTitles, title])
     console.log("savedTitles", savedTitles)
   }
   return (

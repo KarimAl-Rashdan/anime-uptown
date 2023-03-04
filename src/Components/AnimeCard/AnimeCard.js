@@ -19,7 +19,7 @@ return (
   <div className="animeCard">
     <div className="iconContainer">
       <button onClick={() => {
-        addToList({id})
+        addToList({title})
         toggleSaveIcon()}}>
         {saveIcon ? <img id={id} src={saveOrangeIcon} alt="Checked save icon"></img> : <img src={unSaveIcon} alt="Not checked save icon"></img>}
       </button>

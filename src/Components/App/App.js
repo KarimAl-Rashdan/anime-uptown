@@ -42,19 +42,20 @@ function App() {
           }
         />
         <Route
+          exact path="/myanimelist"
+          render = {() => 
+            <main className="listPageContainer">
+              {setNavBar(false)}
+              <AnimeList />
+            </main>
+          }
+        />
+        <Route
           exact path="/:id"
           render = {({match}) => 
             <main className="recommendationPageContainer">
               {setNavBar(false)}
               <Recommendation id={match.params.id}/>
-            </main>
-          }
-        />
-        <Route
-          exact path="/myanimelist"
-          render = {() => 
-            <main className="listPageContainer">
-              <AnimeList />
             </main>
           }
         />

@@ -1,6 +1,6 @@
 import "../MainPage/MainPage.css"
 import React, { useState, useEffect } from "react"
-import fetchMainList from "../../apiCalls"
+import fetchData from "../../apiCalls"
 
 function MainPage() {
   const [animeTitles, setAnimeTitles] = useState([])
@@ -8,9 +8,8 @@ function MainPage() {
   useEffect(() => {
     // (async () => {
       // await fetchMainList()
-      fetchMainList()
+      fetchData("anime")
       .then(data => {
-        console.log(data["data"])
         const allTitles = data["data"].map(animeInfo => {
           let newTitle = {
             title: animeInfo.title,

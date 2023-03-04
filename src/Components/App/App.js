@@ -1,10 +1,11 @@
 // import logo from './logo.svg';
 import React, {useState} from 'react';
-import { Route } from "react-router-dom";
+import { Route, Switch, Link } from "react-router-dom";
 import './App.css';
 import MainPage from "../MainPage/MainPage"
 import NavBar from "../NavBar/NavBar"
-
+import Questions from "../Questions/Questions"
+import Recommendation from "../Recommendation/Recommendation"
 
 
 
@@ -15,15 +16,40 @@ function App() {
   }
   return (
     <div className="App">
-      <div classname="navBarWrapper">
+      <Link to="/">logo</Link>
+      <div className="navBarWrapper">
         {navBar && <NavBar />}
-        <button onClick={() => toggleNavBar()}>Nav</button>
+        <button onClick={() => toggleNavBar()} className="navBtn">Nav</button>
       </div>
-      {/* <NavBar /> */}
-      <main className="mainPageContainer">
-        <header>You're doing great</header>
-        <MainPage />
-      </main>
+      <Switch>
+        <Route
+          exact path="/"
+          render={() => 
+            <main className="mainPageContainer">
+              <header>You're doing great</header>
+              <MainPage />
+            </main>
+          }
+        />
+        <Route 
+          exact path="/question"
+          render ={() => 
+            <main className="questionPageContainer">
+              {setNavBar(false)}
+              <Questions />
+            </main>
+          }
+        />
+        <Route
+          exact path="/:id"
+          render = {({match}) => 
+            <main className="recommendationPageContainer">
+              {setNavBar(false)}
+              <Recommendation id={match.params.id}/>
+            </main>
+          }
+        />
+      </Switch>
     </div>
   );
 }

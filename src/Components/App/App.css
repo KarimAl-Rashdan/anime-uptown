@@ -4,6 +4,9 @@
   text-align: center;
 }
 
+.navBtn {
+  height: 30px;
+}
 .navBarWrapper {
   display:flex;
   flex-direction: row;

@@ -19,7 +19,7 @@ function App() {
       <Link to="/">logo</Link>
       <div className="navBarWrapper">
         {navBar && <NavBar />}
-        <button onClick={() => toggleNavBar()}>Nav</button>
+        <button onClick={() => toggleNavBar()} className="navBtn">Nav</button>
       </div>
       <Switch>
         <Route

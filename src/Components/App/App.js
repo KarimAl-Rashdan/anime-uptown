@@ -49,6 +49,14 @@ function App() {
             </main>
           }
         />
+        <Route
+          exact path="/myanimelist"
+          render = {() => 
+            <main className="listPageContainer">
+              <AnimeList />
+            </main>
+          }
+        />
       </Switch>
     </div>
   );

@@ -5,7 +5,7 @@ import './App.css';
 import MainPage from "../MainPage/MainPage"
 import NavBar from "../NavBar/NavBar"
 import Questions from "../Questions/Questions"
-
+import Recommendation from "../Recommendation/Recommendation"
 
 
 

@@ -5,9 +5,9 @@ import AnimeCard from "../AnimeCard/AnimeCard"
 
 function Recommendation(id) {
   const [recommendedAnime, setRecommendedAnime] = useState([])
-  console.log("props", id)
+  // console.log("props", id)
   useEffect(() => {
-    fetchData(`anime?rating="r17"&genres=${id.id}`)
+    fetchData(`anime?rating=r17&genres=${id.id}`)
     .then(data => {
       console.log("data", data.data)
       const recommendationData = data.data
@@ -30,10 +30,11 @@ function Recommendation(id) {
       <section className="recommendationWrapper">
         {recommendedAnime.map(recAnime => {
           return (
-
+            <div className="allRecommendations" key={recAnime.key}>
+              <AnimeCard image={recAnime.image} title={recAnime.title} rating={recAnime.rating} key={recAnime.key} />
+            </div>
           )
-        }
-          )}
+        })}
       </section>
     </section>
   )

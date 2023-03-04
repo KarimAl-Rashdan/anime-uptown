@@ -10,7 +10,6 @@ function Questions() {
     fetchData("genres/anime")
     .then(data => {
       const genreData = data.data
-      // console.log("data", data.data, data.data)
       const allGenres = genreData.map(genre => {
         const newGenre = {
           id: genre.mal_id,
@@ -18,7 +17,7 @@ function Questions() {
         }
         return newGenre
       })
-      console.log("genres", allGenres)
+      allGenres.splice(20,1)
       return setGenres(allGenres)
     })
     .catch(error => console.log(error))
@@ -29,7 +28,7 @@ function Questions() {
       <div className="genreOptions">
         {genres.map(genre => {
           return (
-            <button><Link to={`/${genre.id}`} key={genre.id}>{genre.name}</Link></button>
+            <button key={genre.id}><Link to={`/${genre.id}`} key={genre.id}>{genre.name}</Link></button>
           )
         })}
       </div>

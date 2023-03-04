@@ -21,26 +21,22 @@ function MainPage() {
           return newTitle
         })
         return setAnimeTitles(allTitles)
-          // return setAnimeTitles(animeTitles => [...animeTitles, allTitles])
       })
       .catch(error => console.log(error))
-  // })()
 },[])
   return (
     <main className="mainpage">
       <h2>hey</h2>
       <section className="animeContainer">
-    {animeTitles.sort((a,b) => b.rating - a.rating)
-    .map(featuredAnime => {
-      return(
-      <div className="allCards">
-        <AnimeCard image={featuredAnime.image} title={featuredAnime.title} rating={featuredAnime.rating} key={featuredAnime.key} />
-        
-      </div>
-      )
-    })}
-    </section>
-    
+        {animeTitles.sort((a,b) => b.rating - a.rating)
+        .map(featuredAnime => {
+          return(
+            <div className="allCards" key={featuredAnime.key}>
+              <AnimeCard image={featuredAnime.image} title={featuredAnime.title} rating={featuredAnime.rating} key={featuredAnime.key} />
+            </div>
+          )
+        })}
+      </section>
     </main>
   )
 }

@@ -9,3 +9,7 @@
   outline-style: solid black;
   outline-width: 10%;
 }
+
+.iconContainer > img {
+  width:10%;
+}

@@ -1,6 +1,7 @@
 import "../MainPage/MainPage.css"
 import React, { useState, useEffect } from "react"
 import fetchData from "../../apiCalls"
+import AnimeCard from "../AnimeCard/AnimeCard"
 
 function MainPage() {
   const [animeTitles, setAnimeTitles] = useState([])
@@ -32,10 +33,9 @@ function MainPage() {
     {animeTitles.sort((a,b) => b.rating - a.rating)
     .map(featuredAnime => {
       return(
-      <div className="animeCard" key={featuredAnime.key}>
-        <img src={featuredAnime.image} alt={featuredAnime.title}></img>
-        <p>{featuredAnime.title}</p>
-        <p>{featuredAnime.rating} Rating</p>
+      <div className="allCards">
+        <AnimeCard image={featuredAnime.image} title={featuredAnime.title} rating={featuredAnime.rating} key={featuredAnime.key} />
+        
       </div>
       )
     })}

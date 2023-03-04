@@ -12,8 +12,14 @@ import AnimeList from "../AnimeList/AnimeList"
 
 function App() {
   const [navBar, setNavBar] = useState(false)
+  const [savedTitles, setSaveTitles] = useState([])
   const toggleNavBar = () => {
     setNavBar(!navBar)
+  }
+
+  const addToList = (event) => {
+    event.preventDefault()
+    setSaveTitles(event.title)
   }
   return (
     <div className="App">
@@ -28,7 +34,7 @@ function App() {
           render={() => 
             <main className="mainPageContainer">
               <header>You're doing great</header>
-              <MainPage />
+              <MainPage addToList={addToList}/>
             </main>
           }
         />
@@ -55,7 +61,7 @@ function App() {
           render = {({match}) => 
             <main className="recommendationPageContainer">
               {setNavBar(false)}
-              <Recommendation id={match.params.id}/>
+              <Recommendation id={match.params.id} addToList={addToList}/>
             </main>
           }
         />

@@ -9,7 +9,7 @@ function Recommendation(id) {
   useEffect(() => {
     fetchData(`anime?rating=r17&genres=${id.id}`)
     .then(data => {
-      console.log("data", data.data)
+      // console.log("data", data.data)
       const recommendationData = data.data
       const allRecommendations = recommendationData.map(recommendation => {
         const newRecommendation = {
@@ -27,6 +27,7 @@ function Recommendation(id) {
   return (
     <section className="recommendationContainer">
       <h1>recommendation</h1>
+        {recommendedAnime.length < 1 && <h2>No Recommendations for this Category</h2>}
       <section className="recommendationWrapper">
         {recommendedAnime.map(recAnime => {
           return (

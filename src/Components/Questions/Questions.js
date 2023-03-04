@@ -10,7 +10,7 @@ function Questions() {
     fetchData("genres/anime")
     .then(data => {
       const genreData = data.data
-      console.log("data", data.data)
+      // console.log("data", data.data)
       const allGenres = genreData.map(genre => {
         const newGenre = {
           id: genre.mal_id,

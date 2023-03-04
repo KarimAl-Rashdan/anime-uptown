@@ -17,9 +17,10 @@ function App() {
     setNavBar(!navBar)
   }
 
-  const addToList = (event) => {
-    event.preventDefault()
-    setSaveTitles(event.title)
+  const addToList = (id) => {
+    // event.preventDefault()
+    setSaveTitles([...savedTitles, id])
+    console.log("savedTitles", savedTitles)
   }
   return (
     <div className="App">
@@ -52,7 +53,7 @@ function App() {
           render = {() => 
             <main className="listPageContainer">
               {setNavBar(false)}
-              <AnimeList />
+              <AnimeList savedList={savedTitles}/>
             </main>
           }
         />
@@ -61,7 +62,7 @@ function App() {
           render = {({match}) => 
             <main className="recommendationPageContainer">
               {setNavBar(false)}
-              <Recommendation id={match.params.id} addToList={addToList}/>
+              <Recommendation id={match.params.id}/>
             </main>
           }
         />

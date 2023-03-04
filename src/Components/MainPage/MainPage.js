@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react"
 import fetchData from "../../apiCalls"
 import AnimeCard from "../AnimeCard/AnimeCard"
 
-function MainPage() {
+function MainPage({addToList}) {
   const [animeTitles, setAnimeTitles] = useState([])
 
   useEffect(() => {
@@ -13,6 +13,7 @@ function MainPage() {
       .then(data => {
         const allTitles = data["data"].map(animeInfo => {
           let newTitle = {
+            id: animeInfo.mal_id,
             title: animeInfo.title,
             image: animeInfo.images.jpg.image_url,
             rating: animeInfo.popularity,
@@ -32,7 +33,7 @@ function MainPage() {
         .map(featuredAnime => {
           return(
             <div className="allCards" key={featuredAnime.key}>
-              <AnimeCard image={featuredAnime.image} title={featuredAnime.title} rating={featuredAnime.rating} key={featuredAnime.key} />
+              <AnimeCard addToList={addToList} id={featuredAnime.id} image={featuredAnime.image} title={featuredAnime.title} rating={featuredAnime.rating} key={featuredAnime.key} />
             </div>
           )
         })}

@@ -10,7 +10,6 @@ function Questions() {
     fetchData("genres/anime")
     .then(data => {
       const genreData = data.data
-      // console.log("data", data.data)
       const allGenres = genreData.map(genre => {
         const newGenre = {
           id: genre.mal_id,
@@ -19,7 +18,6 @@ function Questions() {
         return newGenre
       })
       allGenres.splice(20,1)
-      // console.log("here ya go", allGenres)
       return setGenres(allGenres)
     })
     .catch(error => console.log(error))

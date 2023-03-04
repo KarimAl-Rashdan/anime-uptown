@@ -45,10 +45,10 @@ function App() {
           render = {({match}) => 
             <main className="recommendationPageContainer">
               {setNavBar(false)}
-              <Recommendation />
+              <Recommendation id={match.params.id}/>
             </main>
-        }
-       
+          }
+        />
       </Switch>
     </div>
   );

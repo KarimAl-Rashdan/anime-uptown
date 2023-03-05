@@ -76,6 +76,13 @@ function App() {
             </main>
           }
           />
+        <Route 
+        render={() => {
+          return (
+            <ErrorPage />
+          )
+        }}
+        />
       </Switch>
     </div>
   );

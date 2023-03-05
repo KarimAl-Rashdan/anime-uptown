@@ -19,12 +19,17 @@ function App() {
 
   const addToList = (title) => {
     // event.preventDefault()
-    setSaveTitles([...savedTitles, title])
-    console.log("savedTitles", savedTitles)
+    if(!savedTitles.includes(title)) {
+      return setSaveTitles(previousList => [...previousList, title])
+    } 
+    // console.log("savedTitles", savedTitles)
   }
   const addToFavorites = (title) => {
-    setFavoriteTitles([...favoriteTitles, title])
+    if(!favoriteTitles.includes(title)) {
+      return setFavoriteTitles(previousList => [...previousList, title])
+    } 
   }
+
   return (
     <div className="App">
       <Link to="/">logo</Link>
@@ -35,7 +40,7 @@ function App() {
           render={() => 
             <main className="mainPageContainer">
               <header>You're doing great</header>
-              <MainPage addToList={addToList} addToFavorites={addToFavorites}/>
+              <MainPage addToList={addToList} addToFavorites={addToFavorites} savedTitles={savedTitles} favoriteTitles={favoriteTitles}/>
             </main>
           }
           />

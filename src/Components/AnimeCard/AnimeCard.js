@@ -3,14 +3,20 @@ import React, { useEffect, useState } from "react";
 import saveOrangeIcon from "../../images/saveicon.png"
 import unSaveIcon from "../../images/unsaveicon.png"
 
+
 function AnimeCard({addToList, id, image, title, rating}) {
   const [saveIcon, setSaveIcon] = useState(false)
+  const [favoriteIcon, setFavoriteIcon] = useState(false)
   useEffect(() => {
     return saveIcon ? addToList(title) : undefined
   },[saveIcon]);
 
   const toggleSaveIcon = () => {
     return setSaveIcon(!saveIcon)
+  }
+
+  const toggleFavoriteIcon = () => {
+    return setFavoriteIcon(!favoriteIcon)
   }
 return (
   <div className="animeCard">
@@ -19,6 +25,11 @@ return (
         // addToList({title})
         toggleSaveIcon()}}>
         {saveIcon ? <img id={id} src={saveOrangeIcon} alt="Checked save icon"></img> : <img src={unSaveIcon} alt="Not checked save icon"></img>}
+      </button>
+      <button onClick={() => {
+        // addToList({title})
+        toggleFavoriteIcon()}}>
+        {favoriteIcon ? <img id={id} src={saveOrangeIcon} alt="Checked save icon"></img> : <img src={unSaveIcon} alt="Not checked save icon"></img>}
       </button>
     </div>
     <img src={image} alt={title}></img>

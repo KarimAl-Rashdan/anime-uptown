@@ -7,6 +7,7 @@ import NavBar from "../NavBar/NavBar"
 import Questions from "../Questions/Questions"
 import Recommendation from "../Recommendation/Recommendation"
 import AnimeList from "../AnimeList/AnimeList"
+import Favorites from "../Favorites/Favorites"
 
 
 

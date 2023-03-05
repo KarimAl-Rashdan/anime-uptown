@@ -55,6 +55,14 @@ function App() {
           }
           />
         <Route
+          exact path="/favorites"
+          render = {() =>
+            <main className='favoritesPageContainer'>
+              <Favorites favoriteList={favoriteTitles}/>
+            </main>
+          }
+        />
+        <Route
           exact path="/:id"
           render = {({match}) => 
           <main className="recommendationPageContainer">

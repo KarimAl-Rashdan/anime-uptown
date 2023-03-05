@@ -1,10 +1,9 @@
 import "../AnimeCard/AnimeCard.css"
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState} from "react";
 import saveOrangeIcon from "../../images/saveicon.png"
 import unSaveIcon from "../../images/unsaveicon.png"
 import favoriteIcon from "../../images/likeicon.png"
 import unFavoriteIcon from "../../images/unlikeicon.png"
-// import { useLocation } from "react-router-dom";
 
 
 function AnimeCard({addToList, addToFavorites, id, image, title, rating, savedTitles, favoriteTitles}) {
@@ -27,18 +26,18 @@ function AnimeCard({addToList, addToFavorites, id, image, title, rating, savedTi
     
     const addLike = () => {
       return likeIcon ? addToFavorites(title) : undefined
+      
     }
-    
     const checkSaveStatus = () => {
-      if(savedTitles.includes(title)) {
-        setSaveIcon(true)
-      }
+        if(savedTitles.includes(title)) {
+          setSaveIcon(true)
+        }
+
     }
     const checkLikeStatus = () => {
-      if(favoriteTitles.includes(title)) {
-        setLikeIcon(true)
-      }
-      
+        if(favoriteTitles.includes(title)) {
+          setLikeIcon(true)
+        }
     }
       const handleClick = (status) => {
         setSaveIcon(status)

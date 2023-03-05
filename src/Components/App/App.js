@@ -72,7 +72,7 @@ function App() {
           exact path="/:id"
           render = {({match}) => 
           <main className="recommendationPageContainer">
-              <Recommendation id={match.params.id}/>
+              <Recommendation id={match.params.id} addToList={addToList} addToFavorites={addToFavorites} savedTitles={savedTitles} favoriteTitles={favoriteTitles}/>
             </main>
           }
           />

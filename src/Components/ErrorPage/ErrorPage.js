@@ -2,7 +2,7 @@ import "../ErrorPage/ErrorPage.css"
 
 function ErrorPage() {
 return (
-  <h1>you've come to a place of no return</h1>
+  <h1>Something went wrong - 404 Page Not Found</h1>
 )
 }
 

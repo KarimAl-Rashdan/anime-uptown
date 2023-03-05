@@ -39,7 +39,6 @@ function App() {
           exact path="/"
           render={() => 
             <main className="mainPageContainer">
-              <header>You're doing great</header>
               <MainPage addToList={addToList} addToFavorites={addToFavorites} savedTitles={savedTitles} favoriteTitles={favoriteTitles}/>
             </main>
           }

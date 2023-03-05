@@ -8,7 +8,7 @@ import Questions from "../Questions/Questions"
 import Recommendation from "../Recommendation/Recommendation"
 import AnimeList from "../AnimeList/AnimeList"
 import Favorites from "../Favorites/Favorites"
-
+import ErrorPage from "../ErrorPage/ErrorPage"
 
 
 function App() {

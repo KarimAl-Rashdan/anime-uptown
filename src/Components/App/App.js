@@ -12,6 +12,7 @@ import AnimeList from "../AnimeList/AnimeList"
 
 function App() {
   const [savedTitles, setSaveTitles] = useState([])
+  const [favoriteTitles, setFavoriteTitles] = useState([])
 
   
 
@@ -19,6 +20,9 @@ function App() {
     // event.preventDefault()
     setSaveTitles([...savedTitles, title])
     console.log("savedTitles", savedTitles)
+  }
+  const addToFavorites = (title) => {
+    setFavoriteTitles([...favoriteTitles, title])
   }
   return (
     <div className="App">
@@ -30,7 +34,7 @@ function App() {
           render={() => 
             <main className="mainPageContainer">
               <header>You're doing great</header>
-              <MainPage addToList={addToList}/>
+              <MainPage addToList={addToList} addToFavorites={addToFavorites}/>
             </main>
           }
           />

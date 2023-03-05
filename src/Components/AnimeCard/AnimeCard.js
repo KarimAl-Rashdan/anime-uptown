@@ -6,13 +6,18 @@ import favoriteIcon from "../../images/likeicon.png"
 import unFavoriteIcon from "../../images/unlikeicon.png"
 
 
-function AnimeCard({addToList, id, image, title, rating}) {
+function AnimeCard({addToList, addToFavorites, id, image, title, rating}) {
   const [saveIcon, setSaveIcon] = useState(false)
   const [likeIcon, setLikeIcon] = useState(false)
 
   useEffect(() => {
     return saveIcon ? addToList(title) : undefined
   },[saveIcon]);
+  
+  useEffect(() => {
+    return likeIcon ? addToFavorites(title) : undefined
+
+  }, [likeIcon])
 
   const toggleSaveIcon = () => {
     return setSaveIcon(!saveIcon)

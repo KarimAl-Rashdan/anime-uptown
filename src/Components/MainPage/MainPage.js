@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react"
 import fetchData from "../../apiCalls"
 import AnimeCard from "../AnimeCard/AnimeCard"
 
-function MainPage({addToList}) {
+function MainPage({addToList, addToFavorites}) {
   const [animeTitles, setAnimeTitles] = useState([])
 
   useEffect(() => {
@@ -33,7 +33,7 @@ function MainPage({addToList}) {
         .map(featuredAnime => {
           return(
             <div className="allCards" key={featuredAnime.key}>
-              <AnimeCard addToList={addToList} id={featuredAnime.id} image={featuredAnime.image} title={featuredAnime.title} rating={featuredAnime.rating} key={featuredAnime.key} />
+              <AnimeCard addToList={addToList} addToFavorites={addToFavorites} id={featuredAnime.id} image={featuredAnime.image} title={featuredAnime.title} rating={featuredAnime.rating} key={featuredAnime.key} />
             </div>
           )
         })}

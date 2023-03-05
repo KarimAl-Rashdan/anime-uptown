@@ -1,5 +1,5 @@
 import "../NavBar/NavBar.css"
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom"
 
 function NavBar() {
@@ -8,14 +8,6 @@ const [showNavBar, setShowNavBar] = useState(false)
 const closeNav = () => {
   setShowNavBar(false)
 }
-// const toggleNavBar = () => {
-//   setShowNavBar(!showNavBar)
-// }
-
-// useEffect(() => {
-//   setShowNavBar(showNavBar)
-// }, [showNavBar])
-
  return (
   <nav className="navigation">
     <button className="hamburger" onClick={() => {

@@ -64,11 +64,3 @@ function App() {
 }
 
 export default App;
-//   showNavBar={false} 
-//   toggleNavBar={() => toggleNavBar()}
-//   />
-// )}
-/* <button onClick={() => {
-  console.log("iam being clicked")
-  toggleNavBar()}} className="navBtn">Nav</button> */
-/* {navBar && ( */

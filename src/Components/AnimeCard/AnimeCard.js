@@ -10,16 +10,16 @@ function AnimeCard({addToList, id, image, title, rating}) {
     // setList([...list, title])
     // console.log("list", list)
     return saveIcon ? addToList(title) : undefined
-  },[]);
+  },[saveIcon]);
 
   const toggleSaveIcon = () => {
-    setSaveIcon(!saveIcon)
+    return setSaveIcon(!saveIcon)
   }
 return (
   <div className="animeCard">
     <div className="iconContainer">
       <button onClick={() => {
-        addToList({title})
+        // addToList({title})
         toggleSaveIcon()}}>
         {saveIcon ? <img id={id} src={saveOrangeIcon} alt="Checked save icon"></img> : <img src={unSaveIcon} alt="Not checked save icon"></img>}
       </button>

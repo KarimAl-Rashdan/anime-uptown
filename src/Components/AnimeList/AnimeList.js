@@ -9,7 +9,7 @@ function AnimeList(savedList) {
       <ol>
         {savedList.savedList.map(anime => {
           return (
-            <li>{anime.title}</li>
+            <li key={Date.now()}>{anime}</li>
           )
         })}
       </ol>

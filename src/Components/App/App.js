@@ -6,49 +6,58 @@ import MainPage from "../MainPage/MainPage"
 import NavBar from "../NavBar/NavBar"
 import Questions from "../Questions/Questions"
 import Recommendation from "../Recommendation/Recommendation"
+import AnimeList from "../AnimeList/AnimeList"
 
 
 
 function App() {
-  const [navBar, setNavBar] = useState(false)
-  const toggleNavBar = () => {
-    setNavBar(!navBar)
+  const [savedTitles, setSaveTitles] = useState([])
+
+  
+
+  const addToList = (title) => {
+    // event.preventDefault()
+    setSaveTitles([...savedTitles, title])
+    console.log("savedTitles", savedTitles)
   }
   return (
     <div className="App">
       <Link to="/">logo</Link>
-      <div className="navBarWrapper">
-        {navBar && <NavBar />}
-        <button onClick={() => toggleNavBar()} className="navBtn">Nav</button>
-      </div>
+      <NavBar />
       <Switch>
         <Route
           exact path="/"
           render={() => 
             <main className="mainPageContainer">
               <header>You're doing great</header>
-              <MainPage />
+              <MainPage addToList={addToList}/>
             </main>
           }
-        />
+          />
         <Route 
           exact path="/question"
           render ={() => 
             <main className="questionPageContainer">
-              {setNavBar(false)}
               <Questions />
             </main>
           }
-        />
+          />
+        <Route
+          exact path="/myanimelist"
+          render = {() => 
+            <main className="listPageContainer">
+              <AnimeList savedList={savedTitles}/>
+            </main>
+          }
+          />
         <Route
           exact path="/:id"
           render = {({match}) => 
-            <main className="recommendationPageContainer">
-              {setNavBar(false)}
+          <main className="recommendationPageContainer">
               <Recommendation id={match.params.id}/>
             </main>
           }
-        />
+          />
       </Switch>
     </div>
   );

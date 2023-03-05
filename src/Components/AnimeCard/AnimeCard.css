@@ -9,3 +9,12 @@
   outline-style: solid black;
   outline-width: 10%;
 }
+.iconContainer > button {
+  width:10%;
+  padding:0px;
+}
+.iconContainer > button > img{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}

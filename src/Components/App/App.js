@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import React, {useState} from 'react';
-import { Route, Switch, Link } from "react-router-dom";
+import { Route, Switch, Link, Redirect } from "react-router-dom";
 import './App.css';
 import MainPage from "../MainPage/MainPage"
 import NavBar from "../NavBar/NavBar"
@@ -77,12 +77,16 @@ function App() {
           }
           />
         <Route 
+        path="*"
         render={() => {
           return (
-            <ErrorPage />
+            <main className='errorPageContainer'>
+              <ErrorPage />
+            </main>
           )
         }}
         />
+        {/* <Redirect to="/404" /> */}
       </Switch>
     </div>
   );

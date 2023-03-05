@@ -15,6 +15,7 @@ function Questions() {
           id: genre.mal_id,
           name: genre.name
         }
+        console.log("allids", newGenre.id)
         return newGenre
       })
       allGenres.splice(20,1)

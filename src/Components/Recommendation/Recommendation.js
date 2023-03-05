@@ -5,6 +5,7 @@ import AnimeCard from "../AnimeCard/AnimeCard"
 
 function Recommendation({id,addToList, addToFavorites, savedTitles, favoriteTitles}) {
   const [recommendedAnime, setRecommendedAnime] = useState([])
+  
   useEffect(() => {
     fetchData(`anime?rating=r17&genres=${id}`)
     .then(data => {

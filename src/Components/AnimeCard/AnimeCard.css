@@ -8,11 +8,13 @@
 }
 .animeCard >img {
   border: 1px solid black;
+  width:80%;
 }
 .animeCard:hover {
   outline-style: solid black;
   outline-width: 20%;
 }
+/*Save and Like Icons */
 .iconContainer {
   display: flex;
   justify-content: flex-end;

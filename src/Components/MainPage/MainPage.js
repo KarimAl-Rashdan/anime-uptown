@@ -2,7 +2,6 @@ import "../MainPage/MainPage.css"
 import React, { useState, useEffect } from "react"
 import fetchData from "../../apiCalls"
 import AnimeCard from "../AnimeCard/AnimeCard"
-import ErrorPage from "../ErrorPage/ErrorPage"
 
 function MainPage({addToList, addToFavorites, savedTitles, favoriteTitles}) {
   const [animeTitles, setAnimeTitles] = useState([])
@@ -10,9 +9,8 @@ function MainPage({addToList, addToFavorites, savedTitles, favoriteTitles}) {
   const [error, setError] = useState("")
 
   useEffect(() => {
-    // (async () => {
-      // await fetchMainList()
-      fetchData("anime")
+    (async () => {
+      await fetchData("anime")
       .then(data => {
         const allTitles = data["data"].map(animeInfo => {
           let newTitle = {
@@ -30,13 +28,15 @@ function MainPage({addToList, addToFavorites, savedTitles, favoriteTitles}) {
       .catch(error => {
         setLoading(false)
         setError(error)
-        console.log(error)
       })
-},[])
+    })()
+  },[])
   return (
     <section className="mainpage">
-      <h1>Welcome to Anime Uptown!!!</h1>
-      <p>The perfect place to find recommendations of new anime to watch, update your Anime List, and keep track of your favorites ^-^</p>
+      <header>
+        <h1>Welcome to Anime Uptown!!!</h1>
+        <p>The perfect place to find recommendations of new anime to watch, update your Anime List, and keep track of your favorites ^-^</p>
+      </header>
       {loading && <h2>Loading...</h2>}
       {error && <h2>{error.message}. Please try again!</h2>}
       <section className="animeContainer">

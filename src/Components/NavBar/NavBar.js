@@ -13,8 +13,8 @@ const closeNav = () => {
  return (
   <nav className="navigation">
     <Link className="logoLink" to="/">
-        <img className="logo" src={logo} alt="logo"/>
-      </Link>
+      <img className="logo" src={logo} alt="logo"/>
+    </Link>
     <button className="hamburger" onClick={() => {
       setShowNavBar(!showNavBar)
     }}>

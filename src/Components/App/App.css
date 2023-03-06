@@ -3,24 +3,17 @@
   flex-direction: row;
   text-align: center;
   height: 100vh;
-    width: 100vw;
-    font-family: 'a Akhir Tahun', sans-serif;
-    overflow-y: scroll;
-    background-color: rgb(243, 237, 242);
-                                          
+  width: 100vw;
+  font-family: 'a Akhir Tahun', sans-serif;
+  overflow-y: scroll;
+  background-color: rgb(243, 237, 242);                                      
 }
 
-/* .navBtn {
-  height: 30px;
-}
-.navBarWrapper {
-  display:flex;
-  flex-direction: row;
-} */
 main {
   width: 90%;
 }
-
-/* .logo {
-  width: 60%;
-} */
+@media screen and (max-width: 425px) {
+  .App{
+    flex-direction: column;
+  }
+}

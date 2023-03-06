@@ -82,3 +82,20 @@ a {
   width: 50%;
   transition: transform 0.2s ease-in-out;
 }
+/*Mobile Sizes*/
+@media screen and (max-width: 425px) {
+  .navigation {
+    height: 7vh;
+  width: 43%;
+  }
+  
+}
+
+
+/*laptop and tablet size*/
+@media screen and (min-width: 426px){ 
+  .navigation {
+    height: 11vh;
+  width: 20%;
+  }
+}

@@ -12,5 +12,10 @@
     width: 90%;
     margin: 1%;
     background-color: white;
-    /* border-style: dashed; */
+}
+
+@media screen and (max-width: 425px) {
+  .animeListContainer > ol{
+    width: 80%;
+  }
 }

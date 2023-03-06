@@ -1,8 +1,38 @@
 .animeContainer {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  
 }
 .mainpage {
-  margin: 1%
+  margin: 1%;
+}
+.mainpage > p {
+  width: 55%;
+}
+.mainpage > header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*Mobile Sizes*/
+@media screen and (max-width: 425px) {
+  .animeContainer {
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+  }
+  .allCards {
+    display: flex;
+    justify-content: center;
+  }
+  .mainPageContainer {
+    position: absolute;
+    top: 21%;
+  }
+}
+
+/*laptop and tablet size*/
+@media screen and (min-width: 426px){ 
+  .animeContainer {
+    grid-template-columns: repeat(3, 1fr);
+    min-width: 426px
+  }
 }

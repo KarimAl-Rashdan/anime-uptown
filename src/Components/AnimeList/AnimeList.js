@@ -1,7 +1,6 @@
 import "../AnimeList/AnimeList.css"
 
 function AnimeList(savedList) {
-  console.log("hsajnf", savedList.savedList)
   return (
     <section className="animeListContainer">
       <h1>My Anime List</h1>

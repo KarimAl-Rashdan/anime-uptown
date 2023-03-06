@@ -48,7 +48,7 @@ The app allows a user to view featured anime, and to view recommendations based 
 
 ### View without installation
   
-  Simply go to [our deployed link](https://stretch-tech-iota.vercel.app/)
+  Simply go to [our deployed link](https://anime-uptown.vercel.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

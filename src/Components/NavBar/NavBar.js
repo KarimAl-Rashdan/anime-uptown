@@ -19,9 +19,9 @@ const closeNav = () => {
     </button>
       <div className={showNavBar ? "navigationMenu expanded" : "navigationMenu"}>
         <ul>
-          <li><Link to={`/myanimelist`} onClick={()=> closeNav()}>MyAnimeList</Link></li>
-          <li><Link to={`/favorites`} onClick={()=> closeNav()}>Favorites</Link></li>
-          <li><Link to={`/question`} onClick={()=> closeNav()}>Want a recommendation?</Link></li>
+          <li className="myAnimeList"><Link to={`/myanimelist`} onClick={()=> closeNav()}>MyAnimeList</Link></li>
+          <li className="favorites"><Link to={`/favorites`} onClick={()=> closeNav()}>Favorites</Link></li>
+          <li className="question"><Link to={`/question`} onClick={()=> closeNav()}>Want a recommendation?</Link></li>
         </ul>
       </div>
   </nav>

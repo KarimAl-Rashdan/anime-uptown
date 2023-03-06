@@ -38,4 +38,9 @@ describe('template spec', () => {
     cy.url().should("eq", "http://localhost:3000/1")
     cy.get(".recommendationContainer > h2").contains("No Recommendations for this Category")
   })
+  it("should navigate to error page when url does not match route", () => {
+    cy.intercept("GET", "https://api.jikan.moe/v4/genres/anime", {fixture: "questions"})
+    cy.visit("http://localhost:3000/questione")
+    cy.get(".errorRequest > h1").should("contain", "Something went wrong - 404 Page Not Found")
+  })
 })

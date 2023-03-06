@@ -20,7 +20,7 @@ describe('template spec', () => {
     cy.get(".favoriteListContainer > h1").contains("Favorites")
   })
   it("should add anime titles to list", () => {
-    cy.get(".favoriteListContainer > ol").eq(0)
+    cy.get(".favoriteListContainer > ol").should("not.exist")
     cy
     .visit("http://localhost:3000/")
     .get(".iconContainer > .likeBtn > img").first().should("have.class", "unCheckedFavorite")
@@ -29,6 +29,15 @@ describe('template spec', () => {
     cy
     .get("nav").find(".hamburger").click()
     .get(".expanded > ul > .favorites").click()
-    cy.get(".favoriteListContainer > ol").should("contain", "Cowboy Bebop: Tengoku no Tobira")
+    cy.get(".favoriteListContainer > ol").should("exist")
+  })
+  it("should navigate to error page when url does not match route", () => {
+    cy.intercept("GET", "https://api.jikan.moe/v4/anime", {fixture: "featuredAnime"})
+    cy.visit("http://localhost:3000/fuvorite")
+    cy.get(".errorRequest > h1").should("contain", "Something went wrong - 404 Page Not Found")
+  })
+  it("should have a message when there are no favorites", () => {
+    cy.get(".favoriteListContainer > ol").should("not.exist")
+    cy.get(".favoriteListContainer > h2").should("contain", "No Likes So Far")
   })
 })

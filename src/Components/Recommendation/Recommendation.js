@@ -53,7 +53,7 @@ function Recommendation({id,addToList, addToFavorites, savedTitles, favoriteTitl
   )
       }else {
         return (
-          <div>
+          <div className="errorRequest">
           <ErrorPage />
           </div>
         )

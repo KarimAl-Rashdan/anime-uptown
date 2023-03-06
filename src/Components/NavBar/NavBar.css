@@ -9,18 +9,18 @@
   color: black;
   box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
 }
-.navigationMenuExpanded {
+.expanded {
   margin-left: auto;
 }
-.navigationMenuExpanded ul {
+.expanded ul {
   display: flex;
   padding: 0;
 }
-.navigationMenuExpanded > ul> li {
+.expanded > ul> li {
   list-style-type: none;
   margin: 0 1rem;
 }
-.navigationMenuExpanded > ul> li {
+.expanded > ul> li {
   text-decoration: none;
   display: block;
   width: 100%;
@@ -49,7 +49,7 @@
 .navigationMenu ul {
   display:none;
 }
-.navigationMenuExpanded > ul {
+.expanded > ul {
   position: absolute;
   top: 60px;
   left: 0;
@@ -59,19 +59,19 @@
   background-color: white;
   border-top: 1px solid black;
 }
-.navigationMenuExpanded > li {
+.expanded > li {
   text-align: center;
   margin: 0;
 }
-.navigationMenuExpanded > li {
+.expanded > li {
   color: black;
   width: 100%;
   padding: 1.5rem 0;
 }
-.navigationMenuExpanded li:hover {
+.expanded li:hover {
   background-color: #eee;
 }
 
-.navigationMenuExpanded > ul {
+.expanded > ul {
   display: block;
 }

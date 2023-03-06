@@ -53,15 +53,15 @@ return (
   <div className="animeCard" key={id}>
     <div className="iconContainer">
       <button className="saveBtn" onClick={() => handleClick(true)}>
-        {saveIcon ? <img id={id} src={saveOrangeIcon} alt="Checked save icon"></img> : <img id={id} src={unSaveIcon} alt="Not checked save icon"></img>}
+        {saveIcon ? <img id={id} className="checkedSave" src={saveOrangeIcon} alt="Checked save icon"></img> : <img id={id} className="unCheckedSave"src={unSaveIcon} alt="Not checked save icon"></img>}
       </button>
       <button className="likeBtn" onClick={() => handleLikeClick(true)}>
-        {likeIcon ? <img id={id} src={favoriteIcon} alt="Checked favorite icon"></img> : <img src={unFavoriteIcon} alt="Not checked favorite icon"></img>}
+        {likeIcon ? <img id={id} className="checkedFavorite" src={favoriteIcon} alt="Checked favorite icon"></img> : <img src={unFavoriteIcon} className="unCheckedFavorite" alt="Not checked favorite icon"></img>}
       </button>
     </div>
     <img id={Date.now()} src={image} alt={title}></img>
-    <p>{title}</p>
-    <p>{rating} Rating</p>
+    <p className="title">{title}</p>
+    <p className="rating">{rating} Rating</p>
   </div>
 )
 }

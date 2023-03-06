@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import React, {useState} from 'react';
-import { Route, Switch, Link } from "react-router-dom";
+import { Route, Switch, Link, Redirect } from "react-router-dom";
 import './App.css';
 import MainPage from "../MainPage/MainPage"
 import NavBar from "../NavBar/NavBar"
@@ -8,7 +8,7 @@ import Questions from "../Questions/Questions"
 import Recommendation from "../Recommendation/Recommendation"
 import AnimeList from "../AnimeList/AnimeList"
 import Favorites from "../Favorites/Favorites"
-
+import ErrorPage from "../ErrorPage/ErrorPage"
 
 
 function App() {
@@ -32,14 +32,13 @@ function App() {
 
   return (
     <div className="App">
-      <Link to="/">logo</Link>
+      <Link className="logo" to="/">logo</Link>
       <NavBar />
       <Switch>
         <Route
           exact path="/"
           render={() => 
             <main className="mainPageContainer">
-              <header>You're doing great</header>
               <MainPage addToList={addToList} addToFavorites={addToFavorites} savedTitles={savedTitles} favoriteTitles={favoriteTitles}/>
             </main>
           }
@@ -76,6 +75,17 @@ function App() {
             </main>
           }
           />
+        <Route 
+        path="*"
+        render={() => {
+          return (
+            <main className='errorPageContainer'>
+              <ErrorPage />
+            </main>
+          )
+        }}
+        />
+        {/* <Redirect to="/404" /> */}
       </Switch>
     </div>
   );

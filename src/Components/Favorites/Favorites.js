@@ -1,4 +1,5 @@
 import "../Favorites/Favorites.css"
+import PropTypes from "prop-types"
 
 function Favorites(favoriteList) {
   return (
@@ -19,3 +20,7 @@ function Favorites(favoriteList) {
 }
 
 export default Favorites
+
+Favorites.propTypes = {
+  favoriteList: PropTypes.arrayOf(PropTypes.string)
+}

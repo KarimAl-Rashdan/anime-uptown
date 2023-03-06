@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react"
 import fetchData from "../../apiCalls"
 import AnimeCard from "../AnimeCard/AnimeCard"
 import ErrorPage from "../ErrorPage/ErrorPage"
+import PropTypes from "prop-types"
+
 
 function Recommendation({id,addToList, addToFavorites, savedTitles, favoriteTitles}) {
   const possibleIds = [...Array(81).keys()].map(x => ++x).toString()
@@ -61,3 +63,16 @@ function Recommendation({id,addToList, addToFavorites, savedTitles, favoriteTitl
     }
 }
 export default Recommendation
+
+Recommendation.propTypes = {
+  possibleIds: PropTypes.arrayOf(PropTypes.string),
+  recommendedAnime: PropTypes.arrayOf(PropTypes.string),
+  error: PropTypes.string,
+  loading: PropTypes.bool,
+  newRecommendation: PropTypes.object,
+  key: PropTypes.number.isRequired,
+  id: PropTypes.number.isRequired,
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  rating: PropTypes.number.isRequired
+}

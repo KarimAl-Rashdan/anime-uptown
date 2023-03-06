@@ -2,6 +2,7 @@ import "../NavBar/NavBar.css"
 import React, {useState} from "react";
 import { Link } from "react-router-dom"
 import logo from "../../images/logo.png"
+import PropTypes from "prop-types"
 
 
 function NavBar() {
@@ -34,3 +35,8 @@ const closeNav = () => {
 }
 
 export default NavBar;
+
+NavBar.propTypes = {
+  showNavBar: PropTypes.bool.isRequired,
+  closeNav: PropTypes.func.isRequired,
+}

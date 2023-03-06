@@ -35,7 +35,7 @@ function Questions() {
     <section className="questionWrapper">
       <h1>What are you in the mood for? </h1>
       {loading && <h2>Loading...</h2>}
-      {error && <ErrorPage/>}
+      {error && <h2>{error.message}. Please try again!</h2>}
       <div className="genreOptions">
         {genres.map(genre => {
           return (

@@ -9,6 +9,7 @@ import Recommendation from "../Recommendation/Recommendation"
 import AnimeList from "../AnimeList/AnimeList"
 import Favorites from "../Favorites/Favorites"
 import ErrorPage from "../ErrorPage/ErrorPage"
+// import logo from "../../images/logo.png"
 
 
 function App() {
@@ -29,8 +30,10 @@ function App() {
 
   return (
     <div className="App">
-      <Link className="logo" to="/">logo</Link>
       <NavBar />
+      {/* <Link className="logoLink" to="/">
+        <img className="logo" src={logo} alt="logo"/>
+      </Link> */}
       <Switch>
         <Route
           exact path="/"

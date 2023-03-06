@@ -3,18 +3,33 @@
   width:75%;
   margin: 5px;
   border: 2px solid black;
+  border-radius: 10%;
+  background-color: #fae3f8;
+}
+.animeCard >img {
+  border: 1px solid black;
 }
 .animeCard:hover {
-  box-shadow: 5px 5px purple;
+  /* box-shadow: 5px 5px purple; */
   outline-style: solid black;
-  outline-width: 10%;
+  outline-width: 20%;
+}
+.iconContainer {
+  display: flex;
+  justify-content: flex-end;
 }
 .iconContainer > button {
   width:10%;
   padding:0px;
+  margin: 2%;
+  margin-right: 10%;
 }
 .iconContainer > button > img{
   display: flex;
   width: 100%;
   justify-content: center;
+}
+
+.iconContainer > button:hover {
+  background-color: #e7b9e4;
 }

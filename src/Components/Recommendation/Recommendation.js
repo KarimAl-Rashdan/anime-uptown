@@ -38,7 +38,7 @@ function Recommendation({id,addToList, addToFavorites, savedTitles, favoriteTitl
     <section className="recommendationContainer">
       <h1>recommendation</h1>
       {loading && <h2>Loading...</h2>}
-      {error && <h2>Something went wrong. Please try again</h2>}
+      {error && <h2>{error.message}. Please try again!</h2>}
       {recommendedAnime.length < 1 && <h2>No Recommendations for this Category</h2>}
       <section className="recommendationWrapper">
         {recommendedAnime.map(recAnime => {

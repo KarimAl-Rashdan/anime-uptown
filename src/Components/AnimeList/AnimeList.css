@@ -1,0 +1,16 @@
+.animeListContainer {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.animeListContainer > ol {
+  border-style: dashed;
+  width: 40%;
+}
+.animeListContainer > ol > li{
+  height: 5vh;
+    width: 90%;
+    margin: 1%;
+    background-color: white;
+    /* border-style: dashed; */
+}

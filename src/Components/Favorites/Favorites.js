@@ -3,7 +3,7 @@ import "../Favorites/Favorites.css"
 function Favorites(favoriteList) {
   return (
     <section className="favoriteListContainer">
-      <h1>Favorites</h1>
+      <h1>My Favorites List</h1>
       {favoriteList.favoriteList.length > 0 ? 
       <ol>
         {favoriteList.favoriteList.map(anime => {

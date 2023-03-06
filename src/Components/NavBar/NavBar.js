@@ -1,6 +1,8 @@
 import "../NavBar/NavBar.css"
 import React, {useState} from "react";
 import { Link } from "react-router-dom"
+import logo from "../../images/logo.png"
+
 
 function NavBar() {
 const [showNavBar, setShowNavBar] = useState(false)
@@ -10,6 +12,9 @@ const closeNav = () => {
 }
  return (
   <nav className="navigation">
+    <Link className="logoLink" to="/">
+        <img className="logo" src={logo} alt="logo"/>
+      </Link>
     <button className="hamburger" onClick={() => {
       setShowNavBar(!showNavBar)
     }}>
@@ -19,8 +24,8 @@ const closeNav = () => {
     </button>
       <div className={showNavBar ? "navigationMenu expanded" : "navigationMenu"}>
         <ul>
-          <li className="myAnimeList"><Link to={`/myanimelist`} onClick={()=> closeNav()}>MyAnimeList</Link></li>
-          <li className="favorites"><Link to={`/favorites`} onClick={()=> closeNav()}>Favorites</Link></li>
+          <li className="myAnimeList"><Link to={`/myanimelist`} onClick={()=> closeNav()}>My Anime List</Link></li>
+          <li className="favorites"><Link to={`/favorites`} onClick={()=> closeNav()}>My Favorites List</Link></li>
           <li className="question"><Link to={`/question`} onClick={()=> closeNav()}>Want a recommendation?</Link></li>
         </ul>
       </div>

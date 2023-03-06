@@ -3,6 +3,12 @@ describe('Main Page', () => {
     cy.intercept("GET", "https://api.jikan.moe/v4/anime", {fixture: "featuredAnime"})
     cy.visit("http://localhost:3000/")
   })
+  it.only("should display an error for a 500 status code" , () => {
+    cy
+    .intercept("GET", "https://api.jikan.moe/v4/anime", {statusCode: 500})
+    .visit("http://localhost:3000/")
+    .contains("An error occured: Status 500. Please try again!")
+  })
   it('should display a logo', () => {
     cy.get('.logo').should("be.visible")
   })

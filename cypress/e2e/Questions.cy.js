@@ -4,6 +4,12 @@ describe('template spec', () => {
     cy.visit('http://localhost:3000/question')
 
   })
+  it("should display an error for a 500 status code" , () => {
+    cy
+    .intercept("GET", "https://api.jikan.moe/v4/genres/anime", {statusCode: 500})
+    .visit("http://localhost:3000/question")
+    .contains("An error occured: Status 500. Please try again!")
+  })
   it('should have a logo', () => {
     cy.get('.logo').should("be.visible")
   })
@@ -42,5 +48,11 @@ describe('template spec', () => {
     cy.intercept("GET", "https://api.jikan.moe/v4/genres/anime", {fixture: "questions"})
     cy.visit("http://localhost:3000/questione")
     cy.get(".errorRequest > h1").should("contain", "Something went wrong - 404 Page Not Found")
+  })
+  it("should display an error for a 500 status code for Recommendations" , () => {
+    cy
+    .intercept("GET", "https://api.jikan.moe/v4/anime?rating=r17&genres=1", {statusCode: 500})
+    .visit("http://localhost:3000/1")
+    .contains("An error occured: Status 500. Please try again!")
   })
 })

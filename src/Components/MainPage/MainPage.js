@@ -34,11 +34,11 @@ function MainPage({addToList, addToFavorites, savedTitles, favoriteTitles}) {
       })
 },[])
   return (
-    <main className="mainpage">
+    <section className="mainpage">
       <h1>Welcome to Anime Uptown!!!</h1>
       <p>The perfect place to find recommendations of new anime to watch, update your Anime List, and keep track of your favorites ^-^</p>
       {loading && <h2>Loading...</h2>}
-      {error && <ErrorPage />}
+      {error && <h2>{error.message}. Please try again!</h2>}
       <section className="animeContainer">
         {animeTitles.sort((a,b) => b.rating - a.rating)
         .map(featuredAnime => {
@@ -49,7 +49,7 @@ function MainPage({addToList, addToFavorites, savedTitles, favoriteTitles}) {
           )
         })}
       </section>
-    </main>
+    </section>
   )
 }
 

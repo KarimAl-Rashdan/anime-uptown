@@ -54,4 +54,9 @@ describe('Main Page', () => {
     cy.get(".iconContainer > .likeBtn > img").first().click()
     cy.get(".iconContainer > .likeBtn > img").first().should("have.class", "checkedFavorite")
   })
+  it("should navigate to error page when url does not match route", () => {
+    cy.intercept("GET", "https://api.jikan.moe/v4/anime", {fixture: "featuredAnime"})
+    cy.visit("http://localhost:3000/msd")
+    cy.get(".errorRequest > h1").should("contain", "Something went wrong - 404 Page Not Found")
+  })
 })

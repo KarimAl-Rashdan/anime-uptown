@@ -1,0 +1,102 @@
+{ "data": {
+  "data": [
+    {
+    "mal_id": 1,
+    "url": "https://myanimelist.net/anime/1/Cowboy_Bebop",
+    "images": {
+    "jpg": {
+    "image_url": "https://cdn.myanimelist.net/images/anime/4/19644.jpg"
+    }
+    },
+    "title": "Cowboy Bebop",
+    "rating": "R - 17+ (violence & profanity)",
+    "popularity": 43,
+    "genres": [
+    {
+    "mal_id": 1,
+    "name": "Action"
+    },
+    {
+    "mal_id": 46,
+    "name": "Award Winning"
+    },
+    {
+    "mal_id": 24,
+    "name": "Sci-Fi"
+    }
+    ],
+    "themes": [
+    {
+    "mal_id": 50,
+    "name": "Adult Cast"
+    },
+    {
+    "mal_id": 29,
+    "name": "Space"
+    }
+    ]
+    },
+    {
+    "mal_id": 5,
+    "images": {
+    "jpg": {
+    "image_url": "https://cdn.myanimelist.net/images/anime/1439/93480.jpg"
+    }
+    },
+    "title": "Cowboy Bebop: Tengoku no Tobira",
+    "rating": "R - 17+ (violence & profanity)",
+    "popularity": 594,
+    "genres": [
+    {
+    "mal_id": 1,
+    "name": "Action"
+    },
+    {
+    "mal_id": 24,
+    "name": "Sci-Fi"
+    }
+    ],
+    "themes": [
+    {
+    "mal_id": 50,
+    "name": "Adult Cast"
+    },
+    {
+    "mal_id": 29,
+    "name": "Space"
+    }
+    ]
+    },
+    {
+    "mal_id": 6,
+    "images": {
+    "jpg": {
+    "image_url": "https://cdn.myanimelist.net/images/anime/7/20310.jpg"
+    }
+    },
+    "title": "Trigun",
+    "rating": "PG-13 - Teens 13 or older",
+    "popularity": 246,
+    "genres": [
+    {
+    "mal_id": 1,
+    "name": "Action"
+    },
+    {
+    "mal_id": 2,
+    "name": "Adventure"
+    },
+    {
+    "mal_id": 24,
+    "name": "Sci-Fi"
+    }
+    ],
+    "themes": [
+    {
+    "mal_id": 50,
+    "name": "Adult Cast"
+    }
+    ]
+    }]
+}
+}

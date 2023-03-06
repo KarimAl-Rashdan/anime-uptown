@@ -1,0 +1,15 @@
+{ "data": [
+  {
+  "mal_id": 1,
+  "name": "Action"
+  },
+  {
+  "mal_id": 2,
+  "name": "Adventure"
+  },
+  {
+  "mal_id": 5,
+  "name": "Avant Garde"
+  }
+]
+}

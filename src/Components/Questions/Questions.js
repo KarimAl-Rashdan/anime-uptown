@@ -39,7 +39,7 @@ function Questions() {
       <div className="genreOptions">
         {genres.map(genre => {
           return (
-            <button key={genre.id}><Link to={`/${genre.id}`} key={genre.id}>{genre.name}</Link></button>
+            <button className="genre" key={genre.id}><Link to={`/${genre.id}`} key={genre.id}>{genre.name}</Link></button>
           )
         })}
       </div>

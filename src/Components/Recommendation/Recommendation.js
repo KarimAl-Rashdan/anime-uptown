@@ -5,14 +5,17 @@ import AnimeCard from "../AnimeCard/AnimeCard"
 import ErrorPage from "../ErrorPage/ErrorPage"
 
 function Recommendation({id,addToList, addToFavorites, savedTitles, favoriteTitles}) {
-  const possibleIds = [...Array(81).keys()].map(x => ++x)
+  const possibleIds = [...Array(81).keys()].map(x => ++x).toString()
   const [recommendedAnime, setRecommendedAnime] = useState([])
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(true)
   useEffect(() => {
     fetchData(`anime?rating=r17&genres=${id}`)
     .then(data => {
+      console.log(data)
+      console.log(possibleIds, id)
       const recommendationData = data.data
+      console.log(recommendationData)
       const allRecommendations = recommendationData.map(recommendation => {
         const newRecommendation = {
           title: recommendation.title,
@@ -20,6 +23,7 @@ function Recommendation({id,addToList, addToFavorites, savedTitles, favoriteTitl
           rating: recommendation.popularity,
           key: recommendation.mal_id
         }
+        console.log("rec", newRecommendation)
         return newRecommendation
       })
       console.log("here", possibleIds)
@@ -27,6 +31,7 @@ function Recommendation({id,addToList, addToFavorites, savedTitles, favoriteTitl
       return setRecommendedAnime(allRecommendations)
     })
     .catch(error => {
+      console.log(error)
       setLoading(false)
       setError(error)
     })
@@ -34,6 +39,7 @@ function Recommendation({id,addToList, addToFavorites, savedTitles, favoriteTitl
   },[])
 
   if(possibleIds.includes(id)) {
+
   return (
     <section className="recommendationContainer">
       <h1>recommendation</h1>

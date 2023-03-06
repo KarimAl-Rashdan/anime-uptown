@@ -29,7 +29,13 @@ describe('template spec', () => {
     cy.intercept("GET", "https://api.jikan.moe/v4/anime?rating=r17&genres=1", {fixture: "recommendations"})
     cy.get(".genreOptions > button").first().click()
     cy.url().should("eq", "http://localhost:3000/1")
-    cy.get(".allRecommendations").children().eq(3)
-
+    cy.get(".recommendationContainer > h1").contains("recommendation")
+    cy.get(".allRecommendations").children().should("have.length", 3)
+  })
+  it("should show a message if there are no recommendations", () => {
+    cy.intercept("GET", "https://api.jikan.moe/v4/anime?rating=r17&genres=1", {fixture: "noRecommendations"})
+    cy.get(".genreOptions > button").first().click()
+    cy.url().should("eq", "http://localhost:3000/1")
+    cy.get(".recommendationContainer > h2").contains("No Recommendations for this Category")
   })
 })

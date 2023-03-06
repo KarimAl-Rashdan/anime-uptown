@@ -12,10 +12,7 @@ function Recommendation({id,addToList, addToFavorites, savedTitles, favoriteTitl
   useEffect(() => {
     fetchData(`anime?rating=r17&genres=${id}`)
     .then(data => {
-      console.log(data)
-      console.log(possibleIds, id)
       const recommendationData = data.data
-      console.log(recommendationData)
       const allRecommendations = recommendationData.map(recommendation => {
         const newRecommendation = {
           title: recommendation.title,
@@ -23,15 +20,12 @@ function Recommendation({id,addToList, addToFavorites, savedTitles, favoriteTitl
           rating: recommendation.popularity,
           key: recommendation.mal_id
         }
-        console.log("rec", newRecommendation)
         return newRecommendation
       })
-      console.log("here", possibleIds)
       setLoading(false)
       return setRecommendedAnime(allRecommendations)
     })
     .catch(error => {
-      console.log(error)
       setLoading(false)
       setError(error)
     })

@@ -14,9 +14,6 @@ import ErrorPage from "../ErrorPage/ErrorPage"
 function App() {
   const [savedTitles, setSaveTitles] = useState([])
   const [favoriteTitles, setFavoriteTitles] = useState([])
-
-  
-
   const addToList = (title) => {
     // event.preventDefault()
     if(!savedTitles.includes(title)) {

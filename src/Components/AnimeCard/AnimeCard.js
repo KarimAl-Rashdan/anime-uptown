@@ -1,27 +1,65 @@
 import "../AnimeCard/AnimeCard.css"
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState} from "react";
 import saveOrangeIcon from "../../images/saveicon.png"
 import unSaveIcon from "../../images/unsaveicon.png"
+import favoriteIcon from "../../images/likeicon.png"
+import unFavoriteIcon from "../../images/unlikeicon.png"
 
-function AnimeCard({addToList, id, image, title, rating}) {
+
+function AnimeCard({addToList, addToFavorites, id, image, title, rating, savedTitles, favoriteTitles}) {
+
   const [saveIcon, setSaveIcon] = useState(false)
+  const [likeIcon, setLikeIcon] = useState(false)
+  
   useEffect(() => {
-    return saveIcon ? addToList(title) : undefined
-  },[saveIcon]);
+    checkLikeStatus()
+    checkSaveStatus()
+    addLike()
+    addSave()
+  },[saveIcon, likeIcon] );
 
-  const toggleSaveIcon = () => {
-    return setSaveIcon(!saveIcon)
-  }
+  
+    
+    const addSave = () => {
+      return saveIcon ? addToList(title) : undefined
+    }
+    
+    const addLike = () => {
+      return likeIcon ? addToFavorites(title) : undefined
+      
+    }
+    const checkSaveStatus = () => {
+        if(savedTitles.includes(title)) {
+          setSaveIcon(true)
+        }
+
+    }
+    const checkLikeStatus = () => {
+        if(favoriteTitles.includes(title)) {
+          setLikeIcon(true)
+        }
+    }
+      const handleClick = (status) => {
+        setSaveIcon(status)
+        addSave()
+      }
+
+      const handleLikeClick = (status) => {
+        setLikeIcon(status)
+        addLike()
+      }
+  
 return (
-  <div className="animeCard">
+  <div className="animeCard" key={id}>
     <div className="iconContainer">
-      <button onClick={() => {
-        // addToList({title})
-        toggleSaveIcon()}}>
-        {saveIcon ? <img id={id} src={saveOrangeIcon} alt="Checked save icon"></img> : <img src={unSaveIcon} alt="Not checked save icon"></img>}
+      <button className="saveBtn" onClick={() => handleClick(true)}>
+        {saveIcon ? <img id={id} src={saveOrangeIcon} alt="Checked save icon"></img> : <img id={id} src={unSaveIcon} alt="Not checked save icon"></img>}
+      </button>
+      <button className="likeBtn" onClick={() => handleLikeClick(true)}>
+        {likeIcon ? <img id={id} src={favoriteIcon} alt="Checked favorite icon"></img> : <img src={unFavoriteIcon} alt="Not checked favorite icon"></img>}
       </button>
     </div>
-    <img src={image} alt={title}></img>
+    <img id={Date.now()} src={image} alt={title}></img>
     <p>{title}</p>
     <p>{rating} Rating</p>
   </div>

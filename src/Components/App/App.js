@@ -7,19 +7,29 @@ import NavBar from "../NavBar/NavBar"
 import Questions from "../Questions/Questions"
 import Recommendation from "../Recommendation/Recommendation"
 import AnimeList from "../AnimeList/AnimeList"
+import Favorites from "../Favorites/Favorites"
 
 
 
 function App() {
   const [savedTitles, setSaveTitles] = useState([])
+  const [favoriteTitles, setFavoriteTitles] = useState([])
 
   
 
   const addToList = (title) => {
     // event.preventDefault()
-    setSaveTitles([...savedTitles, title])
-    console.log("savedTitles", savedTitles)
+    if(!savedTitles.includes(title)) {
+      return setSaveTitles(previousList => [...previousList, title])
+    } 
+    // console.log("savedTitles", savedTitles)
   }
+  const addToFavorites = (title) => {
+    if(!favoriteTitles.includes(title)) {
+      return setFavoriteTitles(previousList => [...previousList, title])
+    } 
+  }
+
   return (
     <div className="App">
       <Link to="/">logo</Link>
@@ -30,7 +40,7 @@ function App() {
           render={() => 
             <main className="mainPageContainer">
               <header>You're doing great</header>
-              <MainPage addToList={addToList}/>
+              <MainPage addToList={addToList} addToFavorites={addToFavorites} savedTitles={savedTitles} favoriteTitles={favoriteTitles}/>
             </main>
           }
           />
@@ -51,10 +61,18 @@ function App() {
           }
           />
         <Route
+          exact path="/favorites"
+          render = {() =>
+            <main className='favoritesPageContainer'>
+              <Favorites favoriteList={favoriteTitles}/>
+            </main>
+          }
+        />
+        <Route
           exact path="/:id"
           render = {({match}) => 
           <main className="recommendationPageContainer">
-              <Recommendation id={match.params.id}/>
+              <Recommendation id={match.params.id} addToList={addToList} addToFavorites={addToFavorites} savedTitles={savedTitles} favoriteTitles={favoriteTitles}/>
             </main>
           }
           />

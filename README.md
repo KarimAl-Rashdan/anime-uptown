@@ -52,6 +52,12 @@ The app allows a user to view featured anime, and to view recommendations based 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Preview
+
+![https://user-images.githubusercontent.com/113863021/221703314-2403fa74-4f47-4e32-bfdc-9ff31681ad98.gif](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTk0MDQ3NGQ1OWQyYzNkZTk0NDY5NmJiZjM0OWJhYTVmNjU3ZTEyNyZjdD1n/GWjqYG8mlTUfA6NtK5/giphy.gif)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 ## Contributors
  

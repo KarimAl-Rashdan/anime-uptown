@@ -8,6 +8,7 @@ import Recommendation from "../Recommendation/Recommendation"
 import AnimeList from "../AnimeList/AnimeList"
 import Favorites from "../Favorites/Favorites"
 import ErrorPage from "../ErrorPage/ErrorPage"
+import PropTypes from "prop-types"
 
 function App() {
   const [savedTitles, setSaveTitles] = useState([])
@@ -83,3 +84,13 @@ function App() {
 }
 
 export default App;
+
+App.propTypes = {
+  savedTitles: PropTypes.arrayOf(PropTypes.string),
+  favoriteTitles: PropTypes.arrayOf(PropTypes.string),
+  addToList: PropTypes.func,
+  addToFavorites: PropTypes.func,
+  savedList: PropTypes.arrayOf(PropTypes.string),
+  favoriteList: PropTypes.arrayOf(PropTypes.string),
+  id: PropTypes.string
+}

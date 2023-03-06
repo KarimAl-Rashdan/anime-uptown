@@ -2,6 +2,7 @@ import "../MainPage/MainPage.css"
 import React, { useState, useEffect } from "react"
 import fetchData from "../../apiCalls"
 import AnimeCard from "../AnimeCard/AnimeCard"
+import PropTypes from "prop-types"
 
 function MainPage({addToList, addToFavorites, savedTitles, favoriteTitles}) {
   const [animeTitles, setAnimeTitles] = useState([])
@@ -54,3 +55,17 @@ function MainPage({addToList, addToFavorites, savedTitles, favoriteTitles}) {
 }
 
 export default MainPage;
+
+MainPage.propTypes = {
+  animeTitles: PropTypes.arrayOf(PropTypes.string),
+  loading: PropTypes.bool,
+  error: PropTypes.string,
+  allTitles: PropTypes.arrayOf(PropTypes.object),
+  newTitle: PropTypes.object,
+  addToList: PropTypes.func.isRequired,
+  addToFavorites: PropTypes.func.isRequired,
+  key: PropTypes.number.isRequired,
+  id: PropTypes.number.isRequired,
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired
+}

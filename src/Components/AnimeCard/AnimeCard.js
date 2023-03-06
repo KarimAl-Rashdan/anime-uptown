@@ -4,7 +4,7 @@ import saveOrangeIcon from "../../images/saveicon.png"
 import unSaveIcon from "../../images/unsaveicon.png"
 import favoriteIcon from "../../images/likeicon.png"
 import unFavoriteIcon from "../../images/unlikeicon.png"
-
+import PropTypes from "prop-types"
 
 function AnimeCard({addToList, addToFavorites, id, image, title, rating, savedTitles, favoriteTitles}) {
 
@@ -63,3 +63,16 @@ function AnimeCard({addToList, addToFavorites, id, image, title, rating, savedTi
 }
 
 export default AnimeCard;
+
+AnimeCard.propTypes = {
+  saveIcon: PropTypes.bool,
+  likeIcon: PropTypes.bool,
+  handleClick: PropTypes.func,
+  handleLikeClick: PropTypes.func,
+  addToList: PropTypes.func.isRequired,
+  addToFavorites: PropTypes.func.isRequired,
+  key: PropTypes.number.isRequired,
+  id: PropTypes.number.isRequired,
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired
+}

@@ -1,4 +1,5 @@
 import "../AnimeList/AnimeList.css"
+import PropTypes from "prop-types"
 
 function AnimeList(savedList) {
   return (
@@ -17,3 +18,7 @@ function AnimeList(savedList) {
 }
 
 export default AnimeList
+
+AnimeList.propTypes = {
+  savedList: PropTypes.arrayOf(PropTypes.string)
+}

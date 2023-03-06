@@ -2,6 +2,7 @@ import "../Questions/Questions.css"
 import React, { useState, useEffect } from "react"
 import fetchData from "../../apiCalls"
 import { Link } from "react-router-dom"
+import PropTypes from "prop-types"
 
 function Questions() {
   const [genres, setGenres] = useState([])
@@ -47,3 +48,10 @@ function Questions() {
 }
 
 export default Questions;
+
+Questions.propTypes = {
+  genres: PropTypes.array,
+  loading: PropTypes.bool,
+  error: PropTypes.string,
+  key: PropTypes.number
+}

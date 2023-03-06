@@ -24,23 +24,10 @@ describe('template spec', () => {
     cy.get(".genreOptions > button").contains("Action")
     cy.get(".genreOptions > button").contains("Adventure")
     cy.get(".genreOptions > button").contains("Avant Garde")
-
-    // cy.get(".genreOptions > button").first().click()
-    // cy.url("http://localhost:3000/1")
-    // .visit("http://localhost:3000/")
-    // .get(".iconContainer > .likeBtn > img").first().should("have.class", "unCheckedFavorite")
-    // cy.get(".iconContainer > .likeBtn > img").first().click()
-    // cy.get(".iconContainer > .likeBtn > img").first().should("have.class", "checkedFavorite")
-    // cy
-    // .get("nav").find(".hamburger").click()
-    // .get(".expanded > ul > .favorites").click()
-    // cy.get(".favoriteListContainer > ol").should("contain", "Cowboy Bebop: Tengoku no Tobira")
   })
   it("should navigate to recommendations page", () => {
     cy.intercept("GET", "https://api.jikan.moe/v4/anime?rating=r17&genres=1", {fixture: "recommendations"})
     cy.get(".genreOptions > button").first().click()
-
-    // cy.get(".recommendationContainer > .recommendationWrapper > .allRecommendations")
     cy.url().should("eq", "http://localhost:3000/1")
     cy.get(".allRecommendations").children().eq(3)
 

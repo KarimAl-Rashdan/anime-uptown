@@ -1,4 +1,28 @@
 .recommendationWrapper {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
 }
+
+/*Mobile Sizes*/
+@media screen and (max-width: 425px) {
+    .recommendationWrapper {
+      grid-template-columns: repeat(1, 1fr);
+      width: 100%;
+    }
+    .allRecommendations {
+      display: flex;
+      justify-content: center;
+    }
+    .recommendationPageContainer {
+      position: absolute;
+      top: 21%;
+    }
+    
+  }
+
+  /*laptop and tablet size*/
+@media screen and (min-width: 426px){ 
+    .recommendationWrapper {
+      grid-template-columns: repeat(3, 1fr);
+      min-width: 426px
+    }
+  }

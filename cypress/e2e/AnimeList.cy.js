@@ -12,12 +12,12 @@ describe('template spec', () => {
     .find(".hamburger")
     .click()
     .get("nav > div").should("have.class", "expanded")
-    .get("nav > div").should("contain", "MyAnimeList")
+    .get("nav > div").should("contain", "My Anime List")
     .get("nav > div").should("contain", "Favorites")
     .get("nav > div").should("contain", "Want a recommendation?")
   })
   it("should have a header and descriptor", () => {
-    cy.get(".animeListContainer > h1").contains("MyAnimeList")
+    cy.get(".animeListContainer > h1").contains("My Anime List")
     cy.get(".animeListContainer > p").contains("Keep track of the animes you have watched!")
   })
   it("should add anime titles to list", () => {

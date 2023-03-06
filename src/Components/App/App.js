@@ -1,6 +1,5 @@
-// import logo from './logo.svg';
 import React, {useState} from 'react';
-import { Route, Switch, Link } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import './App.css';
 import MainPage from "../MainPage/MainPage"
 import NavBar from "../NavBar/NavBar"
@@ -10,16 +9,13 @@ import AnimeList from "../AnimeList/AnimeList"
 import Favorites from "../Favorites/Favorites"
 import ErrorPage from "../ErrorPage/ErrorPage"
 
-
 function App() {
   const [savedTitles, setSaveTitles] = useState([])
   const [favoriteTitles, setFavoriteTitles] = useState([])
   const addToList = (title) => {
-    // event.preventDefault()
     if(!savedTitles.includes(title)) {
       return setSaveTitles(previousList => [...previousList, title])
     } 
-    // console.log("savedTitles", savedTitles)
   }
   const addToFavorites = (title) => {
     if(!favoriteTitles.includes(title)) {
@@ -29,7 +25,6 @@ function App() {
 
   return (
     <div className="App">
-      <Link className="logo" to="/">logo</Link>
       <NavBar />
       <Switch>
         <Route
@@ -82,7 +77,6 @@ function App() {
           )
         }}
         />
-        {/* <Redirect to="/404" /> */}
       </Switch>
     </div>
   );

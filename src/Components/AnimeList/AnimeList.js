@@ -1,10 +1,9 @@
 import "../AnimeList/AnimeList.css"
 
 function AnimeList(savedList) {
-  console.log("hsajnf", savedList.savedList)
   return (
     <section className="animeListContainer">
-      <h1>MyAnimeList</h1>
+      <h1>My Anime List</h1>
       <p>Keep track of the animes you have watched!</p>
       <ol>
         {savedList.savedList.map(anime => {

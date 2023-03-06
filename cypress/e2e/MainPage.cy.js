@@ -3,6 +3,12 @@ describe('Main Page', () => {
     cy.intercept("GET", "https://api.jikan.moe/v4/anime", {fixture: "featuredAnime"})
     cy.visit("http://localhost:3000/")
   })
+  it("should display an error for a 500 status code" , () => {
+    cy
+    .intercept("GET", "https://api.jikan.moe/v4/anime", {statusCode: 500})
+    .visit("http://localhost:3000/")
+    .contains("An error occured: Status 500. Please try again!")
+  })
   it('should display a logo', () => {
     cy.get('.logo').should("be.visible")
   })
@@ -12,7 +18,7 @@ describe('Main Page', () => {
     .find(".hamburger")
     .click()
     .get("nav > div").should("have.class", "expanded")
-    .get("nav > div").should("contain", "MyAnimeList")
+    .get("nav > div").should("contain", "My Anime List")
     .get("nav > div").should("contain", "Favorites")
     .get("nav > div").should("contain", "Want a recommendation?")
   })
@@ -34,8 +40,8 @@ describe('Main Page', () => {
     cy.get("nav").should("not.have.class", "expanded")
   })
   it("should have a header and descriptor", () => {
-    cy.get(".mainpage > h1").contains("Welcome to Anime Uptown!!!")
-    cy.get(".mainpage > p").contains("The perfect place to find recommendations of new anime to watch, update your Anime List, and keep track of your favorites ^-^")
+    cy.get(".mainpage > header > h1").contains("Welcome to Anime Uptown!!!")
+    cy.get(".mainpage > header > p").contains("The perfect place to find recommendations of new anime to watch, update your Anime List, and keep track of your favorites ^-^")
   })
   it("should display featured anime", () => {
     cy.get(".allCards").children().should("have.length", 3)
@@ -57,6 +63,6 @@ describe('Main Page', () => {
   it("should navigate to error page when url does not match route", () => {
     cy.intercept("GET", "https://api.jikan.moe/v4/anime", {fixture: "featuredAnime"})
     cy.visit("http://localhost:3000/msd")
-    cy.get(".errorRequest > h1").should("contain", "Something went wrong - 404 Page Not Found")
+    cy.get(".errorPageWrapper > h1").should("contain", "Something went wrong - 404 Page Not Found")
   })
 })

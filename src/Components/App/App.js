@@ -32,7 +32,7 @@ function App() {
 
   return (
     <div className="App">
-      <Link to="/">logo</Link>
+      <Link className="logo" to="/">logo</Link>
       <NavBar />
       <Switch>
         <Route

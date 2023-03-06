@@ -17,7 +17,7 @@ const closeNav = () => {
         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
       </svg>
     </button>
-      <div className={showNavBar ? "navigationMenuExpanded" : "navigationMenu"}>
+      <div className={showNavBar ? "navigationMenu expanded" : "navigationMenu"}>
         <ul>
           <li><Link to={`/myanimelist`} onClick={()=> closeNav()}>MyAnimeList</Link></li>
           <li><Link to={`/favorites`} onClick={()=> closeNav()}>Favorites</Link></li>
